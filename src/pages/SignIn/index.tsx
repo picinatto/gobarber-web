@@ -3,6 +3,9 @@ import { FiLogIn } from 'react-icons/fi';
 
 import logoImg from '../../assets/logo.svg';
 
+import Button from '../../components/button';
+import Input from '../../components/input';
+
 import { Container, Content, Background } from './styles';
 
 const SignIn: React.FC = () => (
@@ -11,11 +14,13 @@ const SignIn: React.FC = () => (
       <img src={logoImg} alt="GoBarber" />
       <form>
         <h1>Faça seu logon</h1>
-        <input placeholder="E-mail" />
+        <Input name="email" placeholder="E-mail" />
 
-        <input type="password" placeholder="Senha" />
+        <Input name="password" type="password" placeholder="Senha" />
 
-        <button type="submit">Entrar</button>
+        <Button name="entrar" type="submit">
+          Entrar
+        </Button>
 
         <a href="forgot">Esqueci minha senha</a>
       </form>
