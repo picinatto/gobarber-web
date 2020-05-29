@@ -4,6 +4,7 @@ import { useField } from '@unform/core';
 
 import { Container } from './styles';
 
+// Adds the interface to receive the props
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   icon: React.ComponentType<IconBaseProps>;
