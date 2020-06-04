@@ -39,15 +39,16 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   }, []);
   // Function that handles the input receiving data
   const handleInputBlur = useCallback(() => {
+    // reset to false
     setIsFocused(false);
-
+    // checks if the input has values using the ref
     if (inputRef.current?.value) {
       setIsFilled(true);
     } else {
       setIsFilled(false);
     }
   }, []);
-
+  // Register event when the page load to register the input fields
   useEffect(() => {
     registerField({
       name: fieldName,
