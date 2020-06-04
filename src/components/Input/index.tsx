@@ -20,15 +20,24 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
+  // Create react components to store the states
+
+  // Stores the reference to the input
   const inputRef = useRef<HTMLInputElement>(null);
+  // Stores the focused state
   const [isFocused, setIsFocused] = useState(false);
+  // Stores the is filled (has information) state
   const [isFilled, setIsFilled] = useState(false);
+
+  // Deconstruct to get wanted attributes from unform useField passing
+  //  the name of the input
   const { fieldName, defaultValue, error, registerField } = useField(name);
 
+  // Function that handles the input receiving focus
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
   }, []);
-
+  // Function that handles the input receiving data
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
 
